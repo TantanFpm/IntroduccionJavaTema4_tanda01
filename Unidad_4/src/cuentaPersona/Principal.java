@@ -1,4 +1,4 @@
-package cuenta1;
+package cuentaPersona;
 
 public class Principal {
 
