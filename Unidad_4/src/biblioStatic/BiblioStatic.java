@@ -19,6 +19,15 @@ public class BiblioStatic {
 		
 	}
 	
+	public static int tipoCaracter(char caracter) {
+		if(caracter>=65 && caracter<=90)
+			return 1;
+		else if(caracter>=97 && caracter<=122)
+			return 2;
+		else
+			return -1;
+	}
+	
 	
 	
 	
@@ -27,22 +36,32 @@ public class BiblioStatic {
 	public static void main(String[] args) {
 		int num1;
 		int num2;
-		do {
+		Scanner sc = new Scanner(System.in);
+		/*do {
 			do {
-				
-				Scanner sc=new Scanner(System.in);
+
 				System.out.println("Introduce un numero positivo");
 				num1 = sc.nextInt();
+
 				do {
+
 					System.out.println("Introduce otro numero mayor que el anterior");
 					num2 = sc.nextInt();
-				} while (num2<=num1);
-				
-				
-			} while (num1<0 || num2<0);
-			
-			BiblioStatic.multiplo5(num1, num2);
-		} while (num1!=0 && num2!=0);
+
+				} while (num2 <= num1);
+
+			} while (num1 < 0 || num2 < 0);
+			if (num1 != 0 && num2 != 0)
+				BiblioStatic.multiplo5(num1, num2);
+
+		} while (num1 != 0 && num2 != 0);
+		sc.close();*/
+		Scanner scChar= new Scanner(System.in);
+		for(int i=1; i<=5; i++) {
+			System.out.println("Introduce un caracter");
+		
+		}	
+		
 	}
 
 }
