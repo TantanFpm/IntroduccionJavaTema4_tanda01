@@ -2,6 +2,7 @@ package biblioStatic;
 
 import java.util.Scanner;
 
+
 public class BiblioStatic {
 	
 	public static void multiplo5(int limite1, int limite2) {
@@ -28,14 +29,19 @@ public class BiblioStatic {
 			return -1;
 	}
 	
+	public static double calcularPotecia(double x, int n) {
+		return Math.pow(x, n);
+	}
 	
 	
 	
 	
 	
 	public static void main(String[] args) {
-		int num1;
-		int num2;
+		int num1, num2, n;
+		double x=7 ;
+		char caracter;
+
 		Scanner sc = new Scanner(System.in);
 		/*do {
 			do {
@@ -56,11 +62,26 @@ public class BiblioStatic {
 
 		} while (num1 != 0 && num2 != 0);
 		sc.close();*/
-		Scanner scChar= new Scanner(System.in);
+		
 		for(int i=1; i<=5; i++) {
 			System.out.println("Introduce un caracter");
-		
+			caracter=Consola.leeChar();
+			if(BiblioStatic.tipoCaracter(caracter)==1)
+				System.out.println("Es mayúscula");
+			else if(BiblioStatic.tipoCaracter(caracter)==2)
+				System.out.println("Es minuscula");
+			else
+				System.out.println("No es una letra");
 		}	
+		
+		do {
+			System.out.println("Introduce un numero");
+			 n=Consola.leeInt();
+		} while (n<0);
+		
+		for(int i=0; i<=n; i++) {
+			System.out.print(BiblioStatic.calcularPotecia(x, i) +"\t");
+		}
 		
 	}
 
