@@ -33,26 +33,55 @@ public class BiblioStatic {
 		return Math.pow(x, n);
 	}
 	
+	public static int sumatorio(int x) {
+		int sumatorio=0;
+		for(int i=0; i<=x; i++) {
+			sumatorio+=i;
+		}
+		return sumatorio;
+	}
 	
+	public static void verTabla(int multiplicando) {
+		
+		for (int i=1; i<=10; i++) {
+			
+			System.out.println(multiplicando + "x" + i + "=" + multiplicando*i);
+		}
+	}
 	
+public static void verTablaRestringida(int multiplicando) {
+		if (multiplicando>=1 &&multiplicando<=20) {
+			System.out.println("Se puede visualizar la tabla del " + multiplicando);
+			for (int i=1; i<=10; i++) {
+			
+			System.out.println(multiplicando + "x" + i + "=" + multiplicando*i);
+		}
+		}else
+			System.out.println("No se puede visualizar la tabla del " + multiplicando);
+		
+	}
+
+	/**
+	 * Pruebas
+	 *
+	 */
 	
 	
 	public static void main(String[] args) {
 		int num1, num2, n;
-		double x=7 ;
+		double x=7;
 		char caracter;
 
-		Scanner sc = new Scanner(System.in);
-		/*do {
+		do {
 			do {
 
 				System.out.println("Introduce un numero positivo");
-				num1 = sc.nextInt();
+				num1 = Consola.leeInt();
 
 				do {
 
 					System.out.println("Introduce otro numero mayor que el anterior");
-					num2 = sc.nextInt();
+					num2 = Consola.leeInt();
 
 				} while (num2 <= num1);
 
@@ -61,7 +90,7 @@ public class BiblioStatic {
 				BiblioStatic.multiplo5(num1, num2);
 
 		} while (num1 != 0 && num2 != 0);
-		sc.close();*/
+	
 		
 		for(int i=1; i<=5; i++) {
 			System.out.println("Introduce un caracter");
@@ -82,6 +111,37 @@ public class BiblioStatic {
 		for(int i=0; i<=n; i++) {
 			System.out.print(BiblioStatic.calcularPotecia(x, i) +"\t");
 		}
+		System.out.println();
+		double resultado=0;
+		do {
+			System.out.println("Introduce un valor para la x");
+			x=Consola.leeDouble();
+		} while (x<=0);
+		for (int i = 1; i <=8; i++) {
+			resultado+=(BiblioStatic.calcularPotecia(x, i)/BiblioStatic.sumatorio(i));
+		}
+		System.out.println(resultado);
+		
+		int num;
+		do {
+			System.out.println("Introduce un numero");
+			num=Consola.leeInt();
+		} while (num<=0 || num>10);
+		BiblioStatic.verTabla(num);
+		int nume;
+		do {
+			System.out.println("Introduce un número para visualzar la tabla de multiplicar, debe ser entre uno y veinte");
+			nume=Consola.leeInt();
+			switch (nume) {
+			case 0:
+				
+				break;
+
+			default:
+				BiblioStatic.verTablaRestringida(nume);
+				break;
+			}
+		} while (nume!=0);
 		
 	}
 
