@@ -11,7 +11,7 @@ public class NumCapic {
 		this.num=num;
 	}
 	
-	public  int contDigitos(long num) {
+	public  int contDigitos() {
 		int contador=0;
 		long aux=num;
 		while(aux/10>0) {
@@ -23,7 +23,7 @@ public class NumCapic {
 		return contador;
 	}
 	
-	public int digitoEnPosicionN(long num, int posicion) {
+	public int digitoEnPosicionN(int posicion) {
 		int cifra;
 		long aux=num;
 		for (int i = 1; i < posicion; i++) {
@@ -32,18 +32,31 @@ public class NumCapic {
 		cifra= (int) (aux%10);
 		return cifra;
 	}
-	public boolean esCapicua(long num) {
+	public boolean esCapicua() {
 		boolean esCapicua=true;
-		int totalDigitos=contDigitos(num);
+		int totalDigitos=contDigitos();
 		int inicio=1, fin=totalDigitos;
-		while(inicio<totalDigitos/2 && esCapicua) {
-			if(digitoEnPosicionN(num, inicio)!=digitoEnPosicionN(num, fin))
+		while(inicio<=totalDigitos/2 && esCapicua) {
+			if(digitoEnPosicionN(inicio)!=digitoEnPosicionN(fin))
 				esCapicua=false;
 			
 			inicio+=1;
 			fin-=1;
 		}
-		
+		if(esCapicua)
+			System.out.println("El numero " + num+ " es capicua");
+		else
+			System.out.println("El numero " + num+ " no es capicua");
 		return esCapicua;
 	}
+
+	public long getNum() {
+		return num;
+	}
+
+	public void setNum(long num) {
+		this.num = num;
+	}
+	
+	
 }
